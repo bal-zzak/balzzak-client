@@ -9,6 +9,7 @@
     "@emotion/styled": "^11.0.0",
     "antd": "^4.2.5",
     "axios": "^0.21.1",
+    "facepaint": "^1.2.1",
     "next": "^9.5.5",
     "next-redux-wrapper": "^5.0.0",
     "prop-types": "^15.7.2",

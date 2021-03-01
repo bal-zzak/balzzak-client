@@ -2,22 +2,30 @@ import React from 'react';
 import styled from "@emotion/styled";
 import { Layout, Row, Col } from 'antd';
 import Link from 'next/link';
+import facepaint from 'facepaint';
+
+const breakpoints = [768, 992, 1200];
+const mq = facepaint(
+  breakpoints.map(bp => `@media (min-width: ${bp}px)`)
+)
 
 const logoImage = 'images/balzzak_logo.png';
 const { Header, Footer, Content } = Layout;
 
-const BREAK_POINT_MOBILE = 768;
-const BREAK_POINT_TABLET = 992;
-const BREAK_POINT_PC = 1200;
+// const StyledHeader = styled(Header)` 
+//   position: relative;
+//   z-index: 1;
+//   padding: 0;
+//   height: auto;
+//   border-bottom: 1px solid #fff;
+//   background: none;
 
-const StyledHeader = styled(Header)` 
-  position: relative;
-  z-index: 1;
-  padding: 0;
-  height: auto;
-  border-bottom: 1px solid #fff;
-  background: none;
-`;
+//   @media only screen and (min-width: ${BreakPoint.BREAK_POINT_TABLET}px) {
+//     & > a {
+//       font-size: 17px;
+//     }
+//   }
+// `;
 const HeaderRow = styled(Row)`
   display: flex;
   max-width: 1140px;
@@ -42,12 +50,6 @@ const MenuItem = styled('li')`
     font-size: 13px;
     background: rgba(255, 255, 255, .2);
   }
-
-  @media only screen and (min-width: ${BREAK_POINT_TABLET}px) {
-    & > a {
-      font-size: 17px;
-    }
-  }
 `;
 
 const AppLayout = ({ children }) => (
@@ -57,10 +59,21 @@ const AppLayout = ({ children }) => (
         width: '100%',
       }}
     >
-      <StyledHeader>
+      <div css={{
+        position: 'relative',
+        zIndex: '1',
+        padding: '0',
+        height: 'auto',
+        borderBottom: '1px solid #fff',
+        background: 'none'
+      }}>
         <HeaderRow>
           <Col span={4}>
-            <Link href="/">
+            <Link href="/" css={{
+              [mq[1]]: {
+                fontSize: '17px'
+              }
+            }}>
                 <img
                   src={logoImage}
                   alt="logo"
@@ -83,7 +96,7 @@ const AppLayout = ({ children }) => (
             </StyledMenu>
           </Col>
         </HeaderRow>
-      </StyledHeader>
+      </div>
       <Content>
         {children}
       </Content>
