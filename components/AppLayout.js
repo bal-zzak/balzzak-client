@@ -2,11 +2,20 @@ import React from 'react';
 import styled from "@emotion/styled";
 import { Layout, Row, Col } from 'antd';
 import Link from 'next/link';
-import mq from '../style/theme';
+import theme from '../style/theme';
 
 const logoImage = 'images/balzzak_logo.png';
 const { Header, Footer, Content } = Layout;
 
+
+const StyledHeader = styled(Header)` 
+  position: relative;
+  z-index: 1;
+  padding: 0;
+  height: auto;
+  border-bottom: 1px solid #fff;
+  background: none;
+`;
 const HeaderRow = styled(Row)`
   display: flex;
   max-width: 1140px;
@@ -32,10 +41,10 @@ const MenuItem = styled('li')`
     background: rgba(255, 255, 255, .2);
   }
 
-  ${mq[1]} {
+  ${theme.tablet} {
     & > a {
       font-size: 17px;
-      color: red;
+      color: ${theme.subColor};
     }
   }
 `;
@@ -47,21 +56,10 @@ const AppLayout = ({ children }) => (
         width: '100%',
       }}
     >
-      <div css={{
-        position: 'relative',
-        zIndex: '1',
-        padding: '0',
-        height: 'auto',
-        borderBottom: '1px solid #fff',
-        background: 'none'
-      }}>
+      <StyledHeader>
         <HeaderRow>
           <Col span={4}>
-            <Link href="/" css={{
-              [mq[1]]: {
-                fontSize: '17px'
-              }
-            }}>
+            <Link href="/">
                 <img
                   src={logoImage}
                   alt="logo"
@@ -84,7 +82,7 @@ const AppLayout = ({ children }) => (
             </StyledMenu>
           </Col>
         </HeaderRow>
-      </div>
+      </StyledHeader>
       <Content>
         {children}
       </Content>

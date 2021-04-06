@@ -2,6 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import Link from 'next/link';
 import { Row, Col } from 'antd';
+import theme from '../../style/theme';
 
 const imgMenu = '../images/img_menu.png';
 const imgMap = '../images/img_map.png';
@@ -22,7 +23,7 @@ const BreifInfo = styled.div`
   font-weight: bold;
   text-align: center;
 
-  @media only screen and (min-width: ${BREAK_POINT_MOBILE}px) {
+  ${theme.mobile} {
     padding: 0;
   }
 

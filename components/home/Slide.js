@@ -37,7 +37,7 @@ const SlideDim = styled.div`
   left: 0;
   background: rgba(0, 0, 0, .5);
   z-index: 1;
-// `;
+`;
 
 function ButtonPrev(props) {
   const { className, style, onClick } = props;
