@@ -7,18 +7,6 @@ import mq from '../style/theme';
 const logoImage = 'images/balzzak_logo.png';
 const { Header, Footer, Content } = Layout;
 
-// const BREAK_POINT_MOBILE = 768;
-// const BREAK_POINT_TABLET = 992;
-// const BREAK_POINT_PC = 1200;
-
-const StyledHeader = styled(Header)` 
-  position: relative;
-  z-index: 1;
-  padding: 0;
-  height: auto;
-  border-bottom: 1px solid #fff;
-  background: none;
-`;
 const HeaderRow = styled(Row)`
   display: flex;
   max-width: 1140px;
@@ -59,10 +47,21 @@ const AppLayout = ({ children }) => (
         width: '100%',
       }}
     >
-      <StyledHeader>
+      <div css={{
+        position: 'relative',
+        zIndex: '1',
+        padding: '0',
+        height: 'auto',
+        borderBottom: '1px solid #fff',
+        background: 'none'
+      }}>
         <HeaderRow>
           <Col span={4}>
-            <Link href="/">
+            <Link href="/" css={{
+              [mq[1]]: {
+                fontSize: '17px'
+              }
+            }}>
                 <img
                   src={logoImage}
                   alt="logo"
@@ -85,7 +84,7 @@ const AppLayout = ({ children }) => (
             </StyledMenu>
           </Col>
         </HeaderRow>
-      </StyledHeader>
+      </div>
       <Content>
         {children}
       </Content>
