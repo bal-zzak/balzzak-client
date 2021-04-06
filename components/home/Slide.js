@@ -5,6 +5,8 @@ import renderEmpty from "antd/lib/config-provider/renderEmpty";
 import { previewImage } from "antd/lib/upload/utils";
 
 const mainSlide01 = '../images/main_slide01.png';
+const slidePrev = '../images/arrow_l.png';
+const slideNext = '../images/arrow_r.png';
 
 const MainSlide = styled.div`
   position: relative;
@@ -60,19 +62,16 @@ const SlideDim = styled.div`
   background: rgba(0, 0, 0, .5);
   z-index: 1;
 // `;
-// const ButtonPrev = styled.button`
-// `;
-// const ButtonNext = styled.button`
-// `;
 
 function ButtonPrev(props) {
   const { className, style, onClick } = props;
   return (
     <div
       className={className}
-      style={{ ...style, display: "block", zIndex: 1, left: 0, width: '60px', fontSize: '60px', color: '#fff' }}
-      onClick={onClick}
-    />
+      style={{ ...style, display: "block", zIndex: 1, left: '20px', width: '60px', height: 'auto' }}
+      onClick={onClick}>
+        <img src={slidePrev} />
+    </div>
   );
 }
 
@@ -81,9 +80,10 @@ function ButtonNext(props) {
   return (
     <div
       className={className}
-      style={{ ...style, display: "block",  zIndex: 1, right: 0, width: '60px', fontSize: '60px', color: '#fff' }}
-      onClick={onClick}
-    />
+      style={{ ...style, display: "block",  zIndex: 1, right: '20px', width: '60px', height: 'auto' }}
+      onClick={onClick}>
+      <img src={slideNext} />
+    </div>
   );
 }
 

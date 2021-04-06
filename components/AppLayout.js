@@ -2,13 +2,14 @@ import React from 'react';
 import styled from "@emotion/styled";
 import { Layout, Row, Col } from 'antd';
 import Link from 'next/link';
+import mq from '../style/theme';
 
 const logoImage = 'images/balzzak_logo.png';
 const { Header, Footer, Content } = Layout;
 
-const BREAK_POINT_MOBILE = 768;
-const BREAK_POINT_TABLET = 992;
-const BREAK_POINT_PC = 1200;
+// const BREAK_POINT_MOBILE = 768;
+// const BREAK_POINT_TABLET = 992;
+// const BREAK_POINT_PC = 1200;
 
 const StyledHeader = styled(Header)` 
   position: relative;
@@ -43,9 +44,10 @@ const MenuItem = styled('li')`
     background: rgba(255, 255, 255, .2);
   }
 
-  @media only screen and (min-width: ${BREAK_POINT_TABLET}px) {
+  ${mq[1]} {
     & > a {
       font-size: 17px;
+      color: red;
     }
   }
 `;
