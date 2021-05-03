@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
+import theme from '../../style/theme';
+//import style from '../../style/antd-override.scss';
 import { Carousel } from 'antd';
 import renderEmpty from "antd/lib/config-provider/renderEmpty";
 import { previewImage } from "antd/lib/upload/utils";
@@ -44,9 +46,9 @@ function ButtonPrev(props) {
   return (
     <div
       className={className}
-      style={{ ...style, display: "block", zIndex: 1, left: '20px', width: '60px', height: 'auto' }}
+      style={{ ...style, display: "block", zIndex: 1, top: '50%', left: '20px', width: '5%', height: 'auto' }}
       onClick={onClick}>
-        <img src={slidePrev} />
+        <img src={slidePrev} style={{width: '100%'}}/>
     </div>
   );
 }
@@ -56,9 +58,9 @@ function ButtonNext(props) {
   return (
     <div
       className={className}
-      style={{ ...style, display: "block",  zIndex: 1, right: '20px', width: '60px', height: 'auto' }}
+      style={{ ...style, display: "block",  zIndex: 1, top: '50%', right: '20px', width: '5%', height: 'auto' }}
       onClick={onClick}>
-      <img src={slideNext} />
+      <img src={slideNext} style={{width: '100%'}} />
     </div>
   );
 }
@@ -71,8 +73,15 @@ const Slide = () => {
     nextArrow: <ButtonNext />,
     prevArrow: <ButtonPrev />
   };
+  styled.div`
+    margin-top: -45px;
+
+    ${theme.tablet} {
+      margin-top: -100px;
+    }
+  `
   return (
-    <Carousel {...settings} style={{ marginTop: -100 }}>
+    <Carousel {...settings}>
       <MainSlide>
         <MainImg
           src={mainSlide01}

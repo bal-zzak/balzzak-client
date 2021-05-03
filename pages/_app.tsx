@@ -8,6 +8,9 @@ import withRedux from 'next-redux-wrapper';
 import AppLayout from '../components/AppLayout';
 import reducer from '../reducers';
 import rootSaga from '../sagas';
+//import styled from "@emotion/styled";
+//import theme from '../style/theme';
+import '../style/antd-override.sass';
 
 const Balzzak = ({ Component, store }) => (
   // eslint-disable-next-line react/jsx-filename-extension
