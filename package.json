@@ -10,7 +10,7 @@
     "antd": "^4.2.5",
     "axios": "^0.21.1",
     "facepaint": "^1.2.1",
-    "next": "^9.5.5",
+    "next": "^11.1.0",
     "next-redux-wrapper": "^5.0.0",
     "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
