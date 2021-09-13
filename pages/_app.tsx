@@ -11,7 +11,7 @@ import rootSaga from '../sagas';
 //import styled from "@emotion/styled";
 //import theme from '../style/theme';
 //import '../style/antd-override.sass';
-import "tailwindcss/tailwind.css";
+import "tailwindcss";
 
 const Balzzak = ({ Component, store }) => (
   // eslint-disable-next-line react/jsx-filename-extension
